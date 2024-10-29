@@ -8,7 +8,7 @@
 首先需要启动容器：
 
 ```bash
-git clone URL_ADDRESS
+git clone https://github.com/MarshalW/nocobase-dev.git
 cd nocobase-dev
 docker-compose up -d
 ```
