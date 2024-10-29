@@ -1,0 +1,15 @@
+networks:
+  nocobase-dev:
+
+services:
+  nocobase-dev:
+    build:
+      context: .
+    container_name: nocobase-dev
+    restart: on-failure
+    init: true
+    volumes:
+      - ./projects:/projects
+      - /etc/localtime:/etc/localtime:ro
+      - ./ssh:/root/.ssh
+    tty: true
