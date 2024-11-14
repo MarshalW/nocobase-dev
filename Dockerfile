@@ -20,6 +20,10 @@ RUN yarn config set disable-self-update-check true
 RUN yarn config set registry https://registry.npmmirror.com/
 RUN yarn config set sqlite3_binary_host_mirror https://npmmirror.com/mirrors/sqlite3/
 
+# 追加
+RUN apt-get install -y \
+    sqlite3
+
 # git 全局设置
 RUN git config --global user.email "marshal.wu@gmail.com"
 RUN git config --global user.name "Marshal Wu"
