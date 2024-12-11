@@ -32,7 +32,7 @@ code --folder-uri vscode-remote://attached-container+$(printf "nocobase-dev" | x
 # 创建 nocobase 项目 - sqlite
 yarn create nocobase-app my-nocobase-app -d sqlite
 
-# 或者 mysql
+# 或者 mysql, 需要先创建数据库
 yarn create nocobase-app my-nocobase-app -d mysql \
    -e DB_HOST=mysql \
    -e DB_PORT=3306 \
