@@ -4,6 +4,7 @@
 
 - 启动一个包含 nocobase 开发所需环境的容器
 - 使用 vscode dev contianers 插件，在本地基于容器开发
+- 支持 sqlite 数据库和 mysql 数据库
 
 首先需要启动容器：
 
@@ -28,8 +29,17 @@ code --folder-uri vscode-remote://attached-container+$(printf "nocobase-dev" | x
 在 vscode 的命令行中创建项目：
 
 ```bash
-# 创建 nocobase 项目
+# 创建 nocobase 项目 - sqlite
 yarn create nocobase-app my-nocobase-app -d sqlite
+
+# 或者 mysql
+yarn create nocobase-app my-nocobase-app -d mysql \
+   -e DB_HOST=mysql \
+   -e DB_PORT=3306 \
+   -e DB_DATABASE=xhs \
+   -e DB_USER=root \
+   -e DB_PASSWORD=example \
+   -e TZ=Asia/Shanghai
 
 code my-nocobase-app/
 # 安装依赖包
