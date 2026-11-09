@@ -34,3 +34,8 @@ RUN echo "export PROXY_IP=localhost" >> ~/.bashrc
 RUN echo "export PROXY_PORT=7890" >> ~/.bashrc
 RUN echo 'alias proxy="export https_proxy=http://$PROXY_IP:$PROXY_PORT;export http_proxy=http://$PROXY_IP:$PROXY_PORT;export all_proxy=socks5://$PROXY_IP:$PROXY_PORT"' >> ~/.bashrc
 RUN echo "alias unproxy='unset all_proxy;unset http_proxy;unset https_proxy;'" >> ~/.bashrc
+
+RUN npm config set proxy="http://myproxy:7890"
+RUN npx playwright install --with-deps chromium
+RUN npx playwright install chromium
+RUN npm config delete proxy
