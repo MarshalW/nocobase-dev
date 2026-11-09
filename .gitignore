@@ -4,4 +4,5 @@ ssh/*
 projects/*
 !projects/.gitkeeper
 
-mysql.DS_Store
+mysql
+.DS_Store
